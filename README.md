@@ -11,7 +11,18 @@ Clone the repository and navigate to the project folder
 git clone https://github.com/mmlab-aueb/scdt.git
 cd scdt
 ```
+**Run the WoT gateway:**
 
+To run the WoT gateway, navigate to the project folder and run the necessary files.
+```bash
+cd WoTgateway
+node WoTgateway.js
+```
+In a new terminal, run the following commands to enable communication between the WoT gateway and the chaincode.
+```bash
+cd WoTgateway
+node util.js
+```
 **Run the script:**
 
 The deploy_chaincode.sh script packages, installs, approves and commits the chaincode definition to the channel.
@@ -25,13 +36,13 @@ Then, you can run it:
 ```
 
 **Deploy Chaincode:**
-
+This script deploys the chaincode, deletes the wallet folder to allow authentication with new credentials and runs the client.
 ```bash
 ./deploy_chaincode.sh
 ```
 
 **Run the client:**
-
+If there are no changes made to the chaincode, you can manually delete the wallet folder and run the client with the following commands.
 Navigate to the client folder and run the necessary files.
 ```bash
 cd client
@@ -40,11 +51,3 @@ node registerUser.js
 node invoke.js
 ```
 
-**Run the WoT gateway:**
-
-To run the WoT gateway,navigate to the project folder and run the necessary files.
-```bash
-cd WoTgateway
-node WoTgateway.js
-node util.js
-```
