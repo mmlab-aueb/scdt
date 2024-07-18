@@ -70,11 +70,11 @@ peer lifecycle chaincode commit -o localhost:7050 --ordererTLSHostnameOverride o
 # Query committed chaincode
 peer lifecycle chaincode querycommitted --channelID mychannel --name dt
 
-# Delete the wallet folder in the specified directory
-rm -rf /home/dimitra/scdt/client/wallet
+# Delete the wallet folder 
+rm -rf $(dirname "$PWD")/../scdt/client/wallet
 
 # Navigate to the client directory
-cd /home/dimitra/scdt/client
+cd $(dirname "$PWD")/../scdt/client
 
 # Run the specified Node.js scripts
 node enrollAdmin.js
