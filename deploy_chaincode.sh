@@ -76,7 +76,7 @@ rm -rf $(dirname "$PWD")/../scdt/client/wallet
 # Navigate to the client directory
 cd $(dirname "$PWD")/../scdt/client
 
-# Run the specified Node.js scripts
+# Run the client scripts
 node enrollAdmin.js
 node registerUser.js
 node invoke.js
