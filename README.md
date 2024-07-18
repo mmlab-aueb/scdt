@@ -36,13 +36,16 @@ Then, you can run it:
 ```
 
 **Deploy Chaincode:**
+
 This script deploys the chaincode, deletes the wallet folder to allow authentication with new credentials and runs the client.
 ```bash
 ./deploy_chaincode.sh
 ```
 
 **Run the client:**
+
 If there are no changes made to the chaincode, you can manually delete the wallet folder and run the client with the following commands.
+
 Navigate to the client folder and run the necessary files.
 ```bash
 cd client
