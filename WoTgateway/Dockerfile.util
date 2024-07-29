@@ -9,12 +9,14 @@ COPY ../package*.json ./
 RUN npm install
 RUN npm install @node-wot/core
 RUN npm install @node-wot/binding-http
+RUN npm install abort-controller
+
 
 # App source
 COPY util.js .
 
 # Expose the port util server will run on
-EXPOSE 5000
+EXPOSE 6000
 
 # Run the util.js
 CMD [ "node", "util.js" ]

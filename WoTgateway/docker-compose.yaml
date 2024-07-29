@@ -13,7 +13,7 @@ services:
       context: .
       dockerfile: Dockerfile.util
     ports:
-      - "5000:5000"
+      - "6000:6000"
     depends_on:
       - wotgateway
     environment:
