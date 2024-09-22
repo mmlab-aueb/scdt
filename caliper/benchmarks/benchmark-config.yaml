@@ -1,0 +1,35 @@
+test:
+  name: Digital Twin Benchmark
+  description: Benchmarking Digital Twin chaincode performance
+  workers:
+    type: local
+    number: 5  # Number of worker threads
+  
+  rounds:
+    - label: PerformActuation
+      description: Perform actuation on TDs
+      txNumber: 500
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/workload.js
+        arguments:
+          function: 'performActuation'
+          parameters: [ "TD0", "toggle", [ "1" ] ]  # Parameters for actuation
+    
+
+
+monitors:
+  resource:
+    - module: docker
+      options:
+        interval: 4
+        containers:
+          [
+            "peer0.org1.example.com",
+            "peer0.org2.example.com",
+            "orderer.example.com",
+          ]
+
